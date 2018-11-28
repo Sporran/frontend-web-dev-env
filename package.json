@@ -1,0 +1,24 @@
+{
+  "name": "javascript-development-environment",
+  "version": "1.0.0",
+  "description": "Simple (noobie / Hello World JavaScript development environment using node (a JavaScript runtime built on Chrome's V8 JavaScript engine), pnpm (package manager - overriding npm), babel (transpiler) and express (web application framework). Node (with npm) should be installed using nvm, eliminating any subsequent need for sudo. All other packages should be installed locally using pnpm. An editorconfig file shares common editor conventions.",
+  "scripts": {
+    "prestart": "./node_modules/.bin/babel buildScripts/startMessage.js -d dist",
+    "build": "./node_modules/.bin/babel buildScripts/srcServer.js -d dist",
+    "start": "pnpm run build && node dist/startMessage.js && node dist/srcServer.js"
+  },
+  "author": "Laird o the Windy Waas",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "chalk": "^2.4.1",
+    "express": "^4.16.4",
+    "open": "^0.0.5",
+    "path": "^0.12.7"
+  }
+}
